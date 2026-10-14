@@ -11,3 +11,4 @@ data/processed/
 dist/
 build/
 *.egg-info/
+data/qdrant/
