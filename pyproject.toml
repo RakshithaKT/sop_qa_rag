@@ -11,7 +11,9 @@ dependencies = [
 "fastapi",
 "uvicorn[standard]",
 "pypdf" ,
-"python-multipart",
+"python-multipart", 
+"sentence-transformers",
+"qdrant-client",
 ]
 
 [project.optional-dependencies]
