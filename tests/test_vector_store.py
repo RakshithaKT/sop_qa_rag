@@ -4,11 +4,7 @@ from sop_qa.VectorDb.vector_store import VectorStore
 
 
 def fake_embeddings(texts):
-    vectors = {
-        "Inspect guards before startup.": [1.0, 0.0, 0.0],
-        "Wear protective gloves.": [0.0, 1.0, 0.0],
-    }
-    return [vectors[text] for text in texts]
+    return [[0.1]* 384 for _ in texts]
 
 
 def test_add_and_search_chunks(tmp_path, monkeypatch):
