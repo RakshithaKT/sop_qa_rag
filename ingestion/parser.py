@@ -1,44 +1,18 @@
-# from db import document_registry 
-
-from docling.document_converter import DocumentConverter
-
-source = "D:/RAGA/sop_qa_rag/db/raw_docs/researchP1_table.pdf"  # file path or URL
-converter = DocumentConverter()
-doc = converter.convert(source).document
-
-print(doc.export_to_markdown())  # output: "### Docling Technical Report[...]" 
-
-import json
-import logging
-import time
-from pathlib import Path
-
-from docling.datamodel.accelerator_options import AcceleratorDevice, AcceleratorOptions
-from docling.datamodel.base_models import InputFormat
-from docling.datamodel.pipeline_options import (
-    PdfPipelineOptions,
-    TableStructureOptions,
-)
-from docling.document_converter import DocumentConverter, PdfFormatOption
-
-
 import hashlib
 import json
 import logging
 import time
 from pathlib import Path
 
-from docling.backend.docling_parse_backend import (
-    ThreadedDoclingParseDocumentBackend,
-)
+from docling.backend.docling_parse_backend import ThreadedDoclingParseDocumentBackend
 from docling.datamodel.base_models import ConversionStatus, InputFormat
 from docling.datamodel.pipeline_options import PdfPipelineOptions
 from docling.document_converter import DocumentConverter, PdfFormatOption
 
-
 # Configure paths
-INPUT_DIR = Path(r"D:/RAGA/sop_qa_rag/db/raw_docs")
-OUTPUT_DIR = Path(r"D:/RAGA/sop_qa_rag/db/parsed_docs")
+BASE_DIR = Path(__file__).resolve().parent.parent
+INPUT_DIR = BASE_DIR / "db" / "raw_docs"
+OUTPUT_DIR = BASE_DIR / "db" / "parsed_docs"
 MANIFEST_PATH = OUTPUT_DIR / "parsed_manifest.json"
 
 logging.basicConfig(
@@ -51,12 +25,58 @@ log = logging.getLogger(__name__)
 def calculate_hash(file_path: Path) -> str:
     """Calculate the SHA-256 hash of a file."""
     sha256 = hashlib.sha256()
-
     with file_path.open("rb") as file:
         for chunk in iter(lambda: file.read(1024 * 1024), b""):
             sha256.update(chunk)
-
     return sha256.hexdigest()
+
+
+def parse_pdf(pdf_path: Path) -> tuple[Path, str, bool]:
+    """
+    Parse a single PDF using Docling if not already parsed.
+    Returns (output_json_path, file_hash, is_newly_parsed)
+    """
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    manifest = {}
+    if MANIFEST_PATH.exists():
+        try:
+            with MANIFEST_PATH.open("r", encoding="utf-8") as file:
+                manifest = json.load(file)
+        except Exception:
+            manifest = {}
+
+    file_hash = calculate_hash(pdf_path)
+    output_path = OUTPUT_DIR / f"{file_hash}.json"
+
+    if file_hash in manifest and output_path.is_file():
+        log.info("Already parsed: %s (%s)", pdf_path.name, file_hash)
+        return output_path, file_hash, False
+
+    pipeline_options = PdfPipelineOptions()
+    pipeline_options.generate_page_images = True
+
+    converter = DocumentConverter(
+        format_options={
+            InputFormat.PDF: PdfFormatOption(
+                pipeline_options=pipeline_options,
+                backend=ThreadedDoclingParseDocumentBackend,
+            )
+        }
+    )
+
+    result = converter.convert(pdf_path, raises_on_error=True)
+    if result.status in (ConversionStatus.SUCCESS, ConversionStatus.PARTIAL_SUCCESS):
+        result.document.save_as_json(output_path)
+        manifest[file_hash] = output_path.name
+        temp_path = OUTPUT_DIR / "parsed_manifest.tmp"
+        with temp_path.open("w", encoding="utf-8") as file:
+            json.dump(manifest, file, indent=2)
+            file.write("\n")
+        temp_path.replace(MANIFEST_PATH)
+        log.info("Successfully parsed: %s -> %s", pdf_path.name, output_path.name)
+        return output_path, file_hash, True
+    else:
+        raise RuntimeError(f"Conversion failed for {pdf_path.name}")
 
 
 def main():

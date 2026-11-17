@@ -82,8 +82,8 @@ def answer_query(query: str) -> dict:
         retrieved_chunks = context_retriever(query, top_k=3)
         context_text = "\n\n---\n\n".join([c["text"] for c in retrieved_chunks])
         
-        prompt = f"""You are an assistant for Standard Operating Procedures (SOP).
-Use ONLY the following context to answer the question. If the answer cannot be found in the context, say "I don't know based on the provided documents." Do not invent information.
+        prompt = f"""You are a product specification extractor.
+Use ONLY the following context to answer the question. If any specification value is missing, you can state it as null, if the product name mentioned in the query is not present in the retrieved context, state, " The specified part is not available". Do not invent information.
 Context:
 {context_text}
 Question: {query}
