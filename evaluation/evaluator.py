@@ -512,7 +512,7 @@ def generate_qwen_response(
     model: str = DEFAULT_QWEN_MODEL,
 ) -> str:
     """Generate an answer from Qwen via Groq using retrieved context."""
-    prompt = f"""You are an assistant for Standard Operating Procedures (SOP).
+    prompt = f"""You are a Research assistant for answering questions related to application of AI in electronics and related topics.
 Use ONLY the following context to answer the question. If the answer cannot be found in the context, say "I don't know based on the provided documents." Do not invent information.
 
 Context:

@@ -1,177 +1,56 @@
 [
   {
-    "user_input": "What was the main purpose of the study?",
-    "reference": "The study investigated how advanced English language students use mobile devices, particularly smartphones and tablet computers, to develop English-learning experiences that meet their needs and goals.",
+    "user_input": "What commercial EDA tools does the LaMDA framework interface with?",
+    "reference": "LaMDA interfaces with Cadence Virtuoso Spectre, Keysight Advanced Design System (ADS), and AMD Vivado.",
     "reference_contexts": [
-      "The study reported in this article investigated ways advanced English language students use their mobile devices (i.e. smartphones and tablet computers) for their language learning.",
-      "The paper explored advanced learners of English engagement with their mobile devices to develop learning experiences that meet their needs and goals as foreign language learners."
+      "These files are used by commercial EDA tools, including Cadence Virtuoso Spectre, Keysight Advanced Design System (ADS), and AMD Vivado, which are interfaced through command scripts for batch-mode operation."
     ]
   },
   {
-    "user_input": "What research question guided the study?",
-    "reference": "The study asked whether students use mobile devices to develop formal or informal English-learning experiences that meet their needs and goals, and, if so, why and how they do so.",
+    "user_input": "Which generative AI model from the survey is most suited for generating realistic noisy samples, and how does this contrast with the LLMs used in the LaMDA framework for RF design?",
+    "reference": "According to the survey, Generative Adversarial Networks (GANs) are highly robust and can synthesize noisy samples for training. In contrast, the LaMDA framework utilizes Large Language Models (LLMs), specifically models like OpenAI's o1, to generate Keysight ADS compliant netlists for RF antenna design through text-based prompts rather than adversarial training.",
     "reference_contexts": [
-      "Do students engage with their mobile devices to develop learning experiences (e.g. the use of mobile devices for formal and/or informal English language study) that meet their needs and goals (e.g. the development of the target language skills and sub-skills) as English language learners? If yes, why and how do they do this?"
+      "GAN ... High - can synthesize noisy samples for training",
+      "We used OpenAI o1 model through a chat-based option, to generate Keysight ADS compliant netlists."
     ]
   },
   {
-    "user_input": "How many students participated, and where were they studying?",
-    "reference": "The participants were 20 Polish university students studying English philology.",
+    "user_input": "What are the primary applications of Graph Neural Networks (GNNs) in electronic circuit design according to the proposed taxonomy?",
+    "reference": "GNNs are primarily used for tasks like predicting how well a circuit will work, checking layout rules, finding hardware Trojans, and analyzing reliability because they effectively capture relational information in graph-structured data.",
     "reference_contexts": [
-      "The participants were 20 Polish university students of English philology."
+      "This makes them great for things like predicting how well a circuit will work, checking layout rules, finding hardware Trojans, and analyzing reliability."
     ]
   },
   {
-    "user_input": "How was the study data collected?",
-    "reference": "The researcher collected the data through semi-structured interviews. Participants were encouraged to describe and elaborate on their experiences using mobile devices to study English.",
+    "user_input": "In the LaMDA FPGA design flow, what happens after the LLM generates a Verilog HDL script, and what is the success rate for the LUT objective?",
+    "reference": "After the LLM generates the Verilog HDL script, the AMD Vivado EDA tool performs design instantiation, simulation, synthesis, and implementation. When taking into account input objectives, 45% of the problems satisfied the LUT objective in at least one run out of five attempts.",
     "reference_contexts": [
-      "The data were gathered by means of a semi-structured interview. This interview format was chosen intentionally since it uses a set of prepared in advance guiding questions and prompts and interviewees are encouraged to elaborate on the problems raised during it.",
-      "The present researcher attempted to encourage the subjects to describe their learning experiences concerning the use of mobile devices for English study."
+      "Once the AMD Vivado EDA tool performed the design instantiation, simulation, synthesis, and implementation, we collected relevant information from reports and log files for further data analysis.",
+      "the 45% of the problems satisfied the LUT objective in at least one run out of the 5 attempts"
     ]
   },
   {
-    "user_input": "How were the interview responses analyzed?",
-    "reference": "The researcher partially transcribed important parts of the interviews, repeatedly read the transcripts, identified recurring themes, coded and recoded ideas, and reviewed, modified, merged or discarded categories. The responses were also analyzed quantitatively by counting responses and calculating percentages.",
+    "user_input": "What is a Large Language Model (LLM) in the context of electronic design automation?",
+    "reference": "An LLM is an advanced artificial intelligence system trained on vast amounts of text data that can understand and generate human-like text. In electronic design automation, LLMs are used to write hardware description languages (like Verilog), generate testbenches, and assist engineers with schematic designs and debugging.",
+    "reference_contexts": []
+  },
+  {
+    "user_input": "What is the main advantage of the VAE \u2192 RL hybrid strategy over using just pure RL for design-space exploration?",
+    "reference": "The VAE \u2192 RL strategy uses a Variational Autoencoder to compress design parameters into a compact latent manifold. This allows the Reinforcement Learning (RL) agent to explore this space much faster and makes policy learning more stable by removing noise from the inputs, reducing exploration time compared to operating in the raw design space.",
     "reference_contexts": [
-      "The analysis started with partial transcription of the important parts of the data. Then the transcribed parts of the data were read several times in order to look for common themes and frequently occurring information. The recurring ideas were coded and recoded, revised and updated. The emerged categories were reviewed, compared, modified and either merged or abandoned.",
-      "The obtained data were analyzed quantitatively. This type of analysis involved counting the number of the interviewees’ responses and calculating percentages."
+      "For vast design spaces, VAE\u2192RL compresses a lot of design parameters into a smooth latent manifold that an RL agent can explore quickly. This frequently cuts down on exploration time and makes policy learning more stable by removing noise from inputs."
     ]
   },
   {
-    "user_input": "Which mobile devices were most commonly used by the participants?",
-    "reference": "Smartphones were the most frequently used mobile devices. Some participants also used tablets, often alongside smartphones.",
+    "user_input": "How much did the token count decrease when the LaMDA RF prompt was optimized?",
+    "reference": "The original prompt required approximately 128,000 tokens, and the optimized prompt required about 26,000 tokens, resulting in a reduction of approximately 80%.",
     "reference_contexts": [
-      "The table demonstrates that smartphones were the most often used mobile devices by the students."
+      "The original prompt required approximately 128000 tokens, whereas the optimised prompt required approximately 26000 tokens, corresponding to a reduction of approximately 80%."
     ]
   },
   {
-    "user_input": "For how long had participants been using mobile devices for English study on average?",
-    "reference": "They had been using mobile devices for English-language study for an average of approximately 3.80 years, with a minimum of 2 years and a maximum of 6 years.",
-    "reference_contexts": [
-      "The participants, on average, had been using them for English language study for about 3.80 years (minimum 2, maximum 6 years)."
-    ]
-  },
-  {
-    "user_input": "When did participants begin using mobile devices for English study?",
-    "reference": "Nine participants (45%) started in senior high school, while eleven (55%) started at university.",
-    "reference_contexts": [
-      "9 (45%) and 11 (55%) of the subjects started using their mobile devices at senior high school and university, respectively."
-    ]
-  },
-  {
-    "user_input": "How did participants describe their experience using mobile devices for English learning?",
-    "reference": "Fifty-five percent considered themselves experienced or fairly experienced, while 45% said they were not very skilful in using mobile devices for English learning.",
-    "reference_contexts": [
-      "More than half of the students (55%) regarded themselves as experienced or fairly experienced users of their MobDs for English language learning; however, 45% claimed not to be very skilful in this area."
-    ]
-  },
-  {
-    "user_input": "Why did students choose to use mobile devices to learn English?",
-    "reference": "They valued mobile devices because they were convenient, fast, readily available, provided quick internet access, and helped them organize and access study materials.",
-    "reference_contexts": [
-      "The study participants decided on the use of their MobDs in order to learn English for the reason that they regarded them as convenient, fast and always ready to use.",
-      "Some students pointed to the fact that the use of MobDs allowed them to have quick access to the internet and organize their own study materials and/or resources."
-    ]
-  },
-  {
-    "user_input": "Which language-learning apps and online tools were commonly used?",
-    "reference": "Commonly used tools included online dictionaries such as Diki and ColorDict Dictionary, and apps such as Google Translate, Duolingo and Fiszkoteka. Two students also mentioned Voscreen and WhatsApp.",
-    "reference_contexts": [
-      "The most frequently used language tools were online dictionaries (e.g. diki, ColorDict Dictionary) and a variety of mobile apps, such as Google Translate, Duolingo and Fiszkoteka.",
-      "Two students also reported using Voscreen and WhatsApp, i.e. mobile apps for watching video and communicating with people, respectively."
-    ]
-  },
-  {
-    "user_input": "What online resources did students use to practise reading and listening?",
-    "reference": "They used resources such as TED, online newspapers and YouTube to practise reading and listening.",
-    "reference_contexts": [
-      "The interviewees pointed out various online resources they used with the purpose of practicing reading and listening skills (e.g. TED, online newspapers, YouTube)."
-    ]
-  },
-  {
-    "user_input": "In which setting did most participants use their mobile devices for English learning?",
-    "reference": "Most participants used their mobile devices most frequently during their leisure time: 13 students (65%). Six students (30%) used them most frequently in the classroom, and one used them equally often in class and outside class.",
-    "reference_contexts": [
-      "Thirteen (65%) interviewees claimed to use their MobDs most frequently in their leisure time, six (30%) in the classroom and one student said he had used his smartphone equally frequently in the classroom and out-of-class English study."
-    ]
-  },
-  {
-    "user_input": "How many participants preferred informal rather than formal English learning through mobile devices?",
-    "reference": "Thirteen participants (65%) favored informal English learning through their mobile devices, while seven (35%) associated their mobile-device use with formal learning related to their studies.",
-    "reference_contexts": [
-      "The majority of the interviewees (13 or 65%) were in favor of using their smartphones and/or tablet computers for informal English learning (i.e. learning the target language for pleasure) and 7 (35%) students associated the use of their MobDs with formal learning (i.e. related to their studies)."
-    ]
-  },
-  {
-    "user_input": "How many students organized regular mobile English-learning sessions?",
-    "reference": "Only two interviewees said that they held and somewhat organized regular mobile English-learning sessions.",
-    "reference_contexts": [
-      "Only two interviewees claimed to hold and somewhat organize regular mobile English language sessions."
-    ]
-  },
-  {
-    "user_input": "Did teachers explicitly encourage students to use mobile devices during English classes?",
-    "reference": "No. The students reported that their teachers did not explicitly advise or suggest using mobile devices in practical English classes or other university classes. Teachers sometimes referred students to electronic or online resources, but did not require mobile-device use, recommend specific apps, or design tasks that required such devices.",
-    "reference_contexts": [
-      "The use of mobile devices was not explicitly advised or suggested by the interviewees’ teachers during their practical English language classes or any other classes at the university.",
-      "They did not ask students to use them in classes, they did not recommend any mobile apps or design language tasks which required using such devices in order to solve them."
-    ]
-  },
-  {
-    "user_input": "Which language area did all participants practise using mobile devices?",
-    "reference": "All interviewees used their mobile devices to practise English vocabulary.",
-    "reference_contexts": [
-      "All the interviewees indicated the target language vocabulary."
-    ]
-  },
-  {
-    "user_input": "Besides vocabulary, which language skills or areas did some participants practise using mobile devices?",
-    "reference": "Some participants practised pronunciation, while only a few mentioned grammar and reading, listening or speaking skills.",
-    "reference_contexts": [
-      "In addition to this, some referred to pronunciation and only a few students mentioned grammar and practicing reading, listening and speaking skills."
-    ]
-  },
-  {
-    "user_input": "Why did participants find mobile devices useful for learning vocabulary?",
-    "reference": "Participants found mobile devices useful because they could quickly search for words, see how words were used in sentences or contexts, and check spelling and pronunciation.",
-    "reference_contexts": [
-      "The subjects chose to practice [vocabulary] through their smartphones and/or tablets because they regarded this language subsystem as the most important to learn, they praised their MobDs for providing them with quick and easy access to needed words and see the way they were used in given sentences.",
-      "Learning English vocabulary by means of mobile devices also allowed them to check correct pronunciation of words."
-    ]
-  },
-  {
-    "user_input": "What proportion of interviewees said mobile devices helped them study English more effectively or efficiently?",
-    "reference": "Fifteen interviewees (75%) expressed that mobile-device use encouraged them to study English more and learn more effectively or efficiently. The remaining five (25%) could not say whether it improved their effectiveness or efficiency.",
-    "reference_contexts": [
-      "The use of mobile devices became an impetus for studying English more and learn this language more effectively and efficiently (this advantageous effect was expressed by as many as 15 or 75% interviewees).",
-      "5 (25%) interviewees were not able to say whether or not the use of mobile devices made them study the target language more effectively or efficiently."
-    ]
-  },
-  {
-    "user_input": "What limitations of the study did the author identify?",
-    "reference": "The author identified three limitations: the small number of participants, the largely homogeneous sample from one institution in which all participants studied English, and the fact that the semi-structured interviews were conducted only once. Different questions or repeated interviews over a longer period might have produced more detailed findings.",
-    "reference_contexts": [
-      "Although the interviewees represented a range of experience of English language learning, the small number of participants reduces the generalizability of the results.",
-      "The group was largely homogenous, i.e. the subjects came from the same institution and all studied English.",
-      "The semi-structured interview ... was conducted only once. Perhaps a different set of questions, their wording or a series of such interviews carried out over a particular period of time (say one academic year) may have yielded more detailed and insightful results."
-    ]
-  },
-  {
-    "user_input": "What did the author recommend that language teachers do to support mobile-assisted language learning?",
-    "reference": "The author recommended that teachers explain and discuss the affordances of mobile technology, select suitable mobile apps, and create in-class and out-of-class tasks that practise a variety of language skills and subsystems. Teachers should also undertake training in technology-mediated language learning and learner autonomy.",
-    "reference_contexts": [
-      "Language teachers should, for instance, present the affordances of mobile technology and discuss them with students during language classes.",
-      "They should also select mobile apps and create opportunities for using them in- and out-of-class learning by offering or designing tasks devoted to practicing a variety of language skills and subsystems suitable for the use of such devices.",
-      "Teachers need to respond quickly to the constant and dynamic changes in contemporary foreign/second language learning and teaching contexts by undergoing official teacher training not only in the area of technology-mediated language learning and teaching but also in the context of learner autonomy."
-    ]
-  },
-  {
-    "user_input": "Why should the findings not be generalized too broadly?",
-    "reference": "The findings should not be generalized too broadly because the study involved only 20 participants from the same institution, all studying English, and used a single semi-structured interview for data collection.",
-    "reference_contexts": [
-      "The small number of participants reduces the generalizability of the results.",
-      "The group was largely homogenous, i.e. the subjects came from the same institution and all studied English.",
-      "The semi-structured interview ... was conducted only once."
-    ]
+    "user_input": "If an LLM takes 6 seconds to generate a script and the EDA tool takes 114 seconds to implement it, what is the total execution time for 5 iterations?",
+    "reference": "The total execution time for one iteration is 120 seconds (6 seconds for the LLM + 114 seconds for the EDA tool). For 5 iterations, the total execution time is 600 seconds, or 10 minutes.",
+    "reference_contexts": []
   }
 ]
